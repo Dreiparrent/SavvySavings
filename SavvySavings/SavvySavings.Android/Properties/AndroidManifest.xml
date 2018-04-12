@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.firebaseapp.savvysavings" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="19" />
+	<application android:label="SavvySavings" android:icon="@drawable/icon">
+		<!-- Google Maps V2 API Key here. -->
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCu1hjwWIeuF3TTFwrqjIb2m1ghs_duDcs" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+		<!-- Firebase Instance Id reciever here. -->
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+				<category android:name="${applicationId}" />
+			</intent-filter>
+		</receiver>
+	</application>
+	<!-- Google Maps for Android v2 requires OpenGL ES v2 -->
+	<uses-feature android:glEsVersion="0x00020000" android:required="true" />
+	<!-- We need to be able to download map tiles and access Google Play Services-->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<!-- Allow the application to access Google web-based services. -->
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<!-- Google Maps for Android v2 needs this permission so that it may check the connection state as it must download data -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+	<!-- Google Maps for Android v2 will cache map tiles on external storage -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+	<!-- Permission to receive remote notifications from Google Play Services -->
+	<!-- Notice here that we have the package name of our application as a prefix on the permissions. -->
+	<uses-permission android:name="com.firebaseapp.savysavings.permission.MAPS_RECEIVE" />
+	<permission android:name="com.firebaseapp.savysavings.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+	<!-- These are optional, but recommended. They will allow Maps to use the My Location provider. -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-library android:name="com.google.android.maps" />
+</manifest>

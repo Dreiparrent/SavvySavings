@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SavvySavings.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#18c29c</Color>
+            <Color x:Key="PrimaryDark">#293A47</Color>
+            <Color x:Key="Accent">#126872</Color>
+            <Color x:Key="LightBackgroundColor">#E2F1EF</Color>
+            <Color x:Key="DarkBackgroundColor">#031727</Color>
+            <Color x:Key="MediumGrayTextColor">#0c0c0c</Color>
+            <Color x:Key="LightTextColor">#e0e0e0</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1076235234949",
+    "firebase_url": "https://savvy-savings.firebaseio.com",
+    "project_id": "savvy-savings",
+    "storage_bucket": "savvy-savings.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076235234949:android:82c6328d968066e7",
+        "android_client_info": {
+          "package_name": "com.firebaseapp.savvysavings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076235234949-9s0mpvmmeosqca6qqqh8hjltonprrp63.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu1hjwWIeuF3TTFwrqjIb2m1ghs_duDcs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

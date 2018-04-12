@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SavvySavings.Views.RegisterPage"
+             BackgroundColor="{StaticResource Primary}"
+             Title="Register">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Start" HorizontalOptions="Center">
+            <Label Text="Register Using Email" FontSize="Large" HorizontalTextAlignment="Center" HeightRequest="75"/>
+            <Entry Placeholder="Email" Keyboard="Email" Text="{Binding EmailAddress}" x:Name="Email" TextChanged="Email_Changed"  WidthRequest="250"/>
+            <Entry Placeholder="Password" x:Name="Password" Text="{Binding Password}" IsPassword="true" TextChanged="Password_Changed" WidthRequest="250"/>
+            <Entry Placeholder="Retype Password" x:Name="PasswordChk" IsPassword="true" TextChanged="PasswordChk_Changed" WidthRequest="250"/>
+            <Label Text="Sign in failed. Please check if the account already exists" x:Name="FailLabel"
+                   FontSize="Small" HorizontalTextAlignment="Center" WidthRequest="250"/>
+            <Button Text="Register" Clicked="Register_Clicked" x:Name="RegisterButton" WidthRequest="250"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SavvySavings.Views.AccountPage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Clicked="EditAcct_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Account Details" FontSize="Large" HorizontalTextAlignment="Center"
+                   HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+            <Label Text="{Binding Name}"
+                   HorizontalOptions="FillAndExpand"/>
+            <Label Text="{Binding Age, StringFormat='Age: {0}'}"/>
+            <Label x:Name="RadiusLabel" HorizontalOptions="Start"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0" Spacing="0">
+                <Label Text="Your Watch Items" FontSize="Large" HorizontalTextAlignment="Center" 
+                   HorizontalOptions="Start"/>
+                <BoxView Color="Transparent" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Edit" HorizontalOptions="End" Clicked="EditWatch_Clicked" WidthRequest="50" HeightRequest="20"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <ListView x:Name="WatchItemListView" 
+                ItemsSource="{Binding Items}"
+                VerticalOptions="FillAndExpand"
+                 HasUnevenRows="true"
+                 RefreshCommand="{Binding LoadItemsCommand}"
+                 IsPullToRefreshEnabled="true"
+                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                 CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" 
+                       LineBreakMode="NoWrap" 
+                       Style="{DynamicResource ListItemTextStyle}" 
+                       FontSize="12" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button Text="Logout" Clicked="Logout_Clicked" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

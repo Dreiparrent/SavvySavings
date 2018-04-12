@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SavvySavings.Views.CreateAccount"
+             BackgroundColor="{StaticResource Primary}">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+            <Label Text="Please tell us more about you" x:Name="HeaderLabel" FontSize="Large"/>
+            <Label Text="Name"/>
+            <Entry x:Name="nameEntry" TextChanged="NameEntry_TextChanged" Placeholder="Firstname Lastname"></Entry>
+            <Label Text="Birthday"/>
+            <DatePicker x:Name="bdEntry">
+                <DatePicker.Format>MM-dd-yyyy</DatePicker.Format>
+            </DatePicker>
+            <Label Text="Sales Radius"/>
+            <Picker x:Name="radiusPicker" Title="Select the distance of sales to search">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1 mile</x:String>
+                        <x:String>3 miles</x:String>
+                        <x:String>5 miles</x:String>
+                        <x:String>10 miles</x:String>
+                        <x:String>20 miles</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+                <Picker.SelectedIndex>1</Picker.SelectedIndex>
+            </Picker>
+            <Button x:Name="submitButton" Text="Continue" Clicked="SubmitButton_Clicked"/>
+            <Button x:Name="saveButton" Text="Save" Clicked="SaveButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

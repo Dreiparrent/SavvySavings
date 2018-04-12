@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SavvySavings.Views.PointsPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Redeem" Clicked="Redeem_Clicked"  Order="Default"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <!--<ScrollView AbsoluteLayout.LayoutBounds="0,0,1,0.4" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#e3edee">
+                <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" Touch="canvasView_Touch"
+                                   HorizontalOptions="FillAndExpand" HeightRequest="400">
+                </skia:SKCanvasView>
+            </ScrollView>-->
+            <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" EnableTouchEvents="True" Touch="CanvasView_Touch"
+                                   AbsoluteLayout.LayoutBounds="0,0,1,0.4" AbsoluteLayout.LayoutFlags="All">
+            </skia:SKCanvasView>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,1,1,0.60" AbsoluteLayout.LayoutFlags="All"
+                         BackgroundColor="{StaticResource LightBackgroundColor}">
+                <ListView x:Name="CheckInsListView" 
+                        ItemsSource="{Binding CheckIns}"
+                        VerticalOptions="FillAndExpand"
+                        HasUnevenRows="true"
+                        RefreshCommand="{Binding LoadCheckInsCommand}"
+                        IsPullToRefreshEnabled="true"
+                        IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                        CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                        <Label Text="{Binding Name}" FontSize="16"
+                                               LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" 
+                                               HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding SpValue,StringFormat='{0}SP'}" FontSize="13" HorizontalTextAlignment="End"
+                                               HorizontalOptions="End"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding InDate, StringFormat='{0:MMMM dd, yyyy hh\\:mm}'}" FontSize="13"
+                                               LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" VerticalTextAlignment="Center"
+                                               VerticalOptions="End"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

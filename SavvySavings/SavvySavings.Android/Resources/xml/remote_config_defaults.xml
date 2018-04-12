@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+  <entry>
+    <key>SPL1</key>
+    <value>Beginner</value>
+  </entry>
+  <entry>
+    <key>SPL2</key>
+    <value>Shopper</value>
+  </entry>
+  <entry>
+    <key>SPL3</key>
+    <value>Saver</value>
+  </entry>
+  <entry>
+    <key>SPL4</key>
+    <value>Not Set</value>
+  </entry>
+  <entry>
+    <key>SPL5</key>
+    <value>Smart Saver</value>
+  </entry>
+  <entry>
+    <key>SPL6</key>
+    <value>Sharp Saver</value>
+  </entry>
+  <entry>
+    <key>SPL7</key>
+    <value>Savvy Starter</value>
+  </entry>
+  <entry>
+    <key>SPL8</key>
+    <value>Savvy Shopper</value>
+  </entry>
+  <entry>
+    <key>SPL9</key>
+    <value>Savvy Saver</value>
+  </entry>
+  <entry>
+    <key>SPL10</key>
+    <value>Savvy Saver</value>
+  </entry>
+  <entry>
+    <key>SPT1</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT2</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT3</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT4</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT5</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT6</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT7</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT8</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT9</key>
+    <value>This is the description of what this level means.</value>
+  </entry>
+  <entry>
+    <key>SPT10</key>
+    <value>This is the description of what this level means.</value>
+  </entry>  
+</defaultsMap>

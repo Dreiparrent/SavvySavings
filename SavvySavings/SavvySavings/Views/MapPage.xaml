@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SavvySavings.ViewModels;"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="SavvySavings.Views.MapPage"
+             Title="Map">
+    <ContentPage.BindingContext>
+        <vm:MapViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <maps:Map WidthRequest="320" HeightRequest="200"
+                x:Name="MainMap"
+                IsShowingUser="true"
+            />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

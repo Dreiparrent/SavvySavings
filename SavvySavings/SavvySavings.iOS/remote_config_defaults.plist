@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SPL1</key>
+	<string>Beginner</string>
+	<key>SPL2</key>
+	<string>Shopper</string>
+	<key>SPL3</key>
+	<string>Saver</string>
+	<key>SPL4</key>
+	<string>Not Set</string>
+	<key>SPL5</key>
+	<string>Smart Saver</string>
+	<key>SPL6</key>
+	<string>Sharp Saver</string>
+	<key>SPL7</key>
+	<string>Savvy Starter</string>
+	<key>SPL8</key>
+	<string>Savvy Shopper</string>
+	<key>SPL9</key>
+	<string>Savvy Saver</string>
+	<key>SPL10</key>
+	<string>Savvy Saver</string>
+	<key>SPT1</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT2</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT3</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT4</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT5</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT6</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT7</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT8</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT9</key>
+	<string>This is the description of what this level means.</string>
+	<key>SPT10</key>
+	<string>This is the description of what this level means.</string>
+</dict>
+</plist>

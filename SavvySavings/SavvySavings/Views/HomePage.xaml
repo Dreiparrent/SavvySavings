@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SavvySavings.Views.HomePage"
+             Title="Home"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Leave" Clicked="Sales_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <AbsoluteLayout x:Name="headerLayout" AbsoluteLayout.LayoutBounds="0,0,1,0.3" AbsoluteLayout.LayoutFlags="SizeProportional"
+                         BackgroundColor="{StaticResource Primary}">
+                    <Button Image="ic_notif.png" BackgroundColor="Transparent" Style="@style/NoShadowButton"
+                            AbsoluteLayout.LayoutBounds="0,0,0.1,0.2" AbsoluteLayout.LayoutFlags="SizeProportional"/>
+                    <Button Image="ic_settings.png" BackgroundColor="Transparent" Style="@style/NoShadowButton"
+                            AbsoluteLayout.LayoutBounds="1,0,0.1,0.2" AbsoluteLayout.LayoutFlags="XProportional,SizeProportional"/>
+
+                    <Button Image="ic_person.png" BackgroundColor="Transparent" Style="@style/NoShadowButton" Clicked="PushAccount"
+                            AbsoluteLayout.LayoutBounds=".5,20,75,75" AbsoluteLayout.LayoutFlags="XProportional">
+                    </Button>
+
+                    <Label Text="{Binding SPoints,StringFormat='{0} SP'}" HorizontalOptions="Start" VerticalTextAlignment="End"
+                           AbsoluteLayout.LayoutBounds="0,1,0.5,.2" AbsoluteLayout.LayoutFlags="All"/>
+                    <Label Text="Badges" HorizontalTextAlignment="End" VerticalTextAlignment="End"
+                           AbsoluteLayout.LayoutBounds="1,1,0.25,0.2" AbsoluteLayout.LayoutFlags="All"/>
+                </AbsoluteLayout>
+                <AbsoluteLayout BackgroundColor="{StaticResource Accent}"
+                                AbsoluteLayout.LayoutBounds="0,0.375,1,0.2" AbsoluteLayout.LayoutFlags="All">
+                    <AbsoluteLayout 
+                        AbsoluteLayout.LayoutBounds="0,0,0.5,1" AbsoluteLayout.LayoutFlags="All">
+                        <Button Image="ic_list.png" BackgroundColor="Transparent" Style="@style/NoShadowButton" Clicked="Watch_Clicked"
+                                AbsoluteLayout.LayoutBounds=".5,.2,75,75" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Button>
+                        <Label Text="Watch List" HorizontalTextAlignment="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,1,0.95,0.2" AbsoluteLayout.LayoutFlags="All"/>
+                    </AbsoluteLayout>
+                    <AbsoluteLayout 
+                        AbsoluteLayout.LayoutBounds="1,1,0.5,1" AbsoluteLayout.LayoutFlags="All">
+                        <Button Image="ic_map.png" BackgroundColor="Transparent" Style="@style/NoShadowButton" Clicked="Map_Clicked"
+                                AbsoluteLayout.LayoutBounds=".5,.2,75,75" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        </Button>
+                        <Label Text="Map" HorizontalTextAlignment="Center"
+                               AbsoluteLayout.LayoutBounds="0.5,1,0.95,0.2" AbsoluteLayout.LayoutFlags="All"/>
+                    </AbsoluteLayout>
+                </AbsoluteLayout>
+                <StackLayout AbsoluteLayout.LayoutBounds="0,1,1,0.50" AbsoluteLayout.LayoutFlags="All"
+                         BackgroundColor="{StaticResource LightBackgroundColor}">
+                    <ListView x:Name="CheckInsListView" 
+                        ItemsSource="{Binding CheckIns}"
+                        VerticalOptions="FillAndExpand"
+                        HasUnevenRows="true"
+                        RefreshCommand="{Binding LoadCheckInsCommand}"
+                        IsPullToRefreshEnabled="true"
+                        IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                        CachingStrategy="RecycleElement"
+                        ItemSelected="Points_Clicked">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="10">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                            <Label Text="{Binding Name}" FontSize="16"
+                                               LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" 
+                                               HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding SpValue,StringFormat='{0}SP'}" FontSize="13" HorizontalTextAlignment="End"
+                                               HorizontalOptions="End"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding InDate, StringFormat='{0:MMMM dd, yyyy hh\\:mm}'}" FontSize="13"
+                                               LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" VerticalTextAlignment="Center"
+                                               VerticalOptions="End"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </AbsoluteLayout>
+            <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="50" 
+                    Text="Sales" TextColor="White" BorderRadius="0" Clicked="Sales_Clicked" 
+                    BackgroundColor="{StaticResource PrimaryDark}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

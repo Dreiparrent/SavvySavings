@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SavvySavings.Views.LoginPage"
+             BackgroundColor="{StaticResource Primary}"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="Login" FontSize="Large" HorizontalTextAlignment="Center" HeightRequest="75"/>
+            <Entry Placeholder="Email" Keyboard="Email" x:Name="email" TextChanged="Email_Changed" WidthRequest="250"/>
+            <Entry Placeholder="Password" x:Name="password" IsPassword="true" TextChanged="Password_Changed" WidthRequest="250"/>
+            <Label Text="email or password incorrect" x:Name="ErrorLabel" FontSize="Small"
+                   HorizontalTextAlignment="Center"/>
+            <Button Text="Login" Clicked="Login_Clicked" x:Name="loginButton" WidthRequest="250"/>
+            <Button Text="Register" Clicked="Register_Clicked" WidthRequest="250"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
